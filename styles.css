@@ -1,0 +1,339 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "SUSE Mono", monospace;
+  font-weight: 500;
+  scroll-behavior: smooth;
+  background: #ffffff; /* dark theme */
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+.navbar-text a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  padding: 0 0.5rem;
+  
+}
+
+.navbar-text a:hover {
+  text-decoration: underline;
+  color: #31cbff;
+}
+
+/* Smooth slide effect for navbar */
+.navbar {
+  transition: transform 0.3s ease; /* smooth slide effect */
+}
+
+/* When hidden */
+.navbar.hidden {
+  transform: translateY(-100%); /* slide up out of view */
+}
+
+/* Section general */
+section {
+  min-height: 90vh;
+  padding: 5rem 10% 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero {
+  background: #1f1f1f;
+  text-align: center;
+  padding-top: 6rem;
+}
+
+/* Hero container: Image + Text */
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* desktop: text left-aligned next to image */
+}
+
+/* Avatar Glow */
+.avatar-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.avatar-glow {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 0 15px 5px rgba(0,123,255,0.7);
+  animation: glow 2s infinite alternate;
+  z-index: 1;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px 3px rgba(0,123,255,0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(0,123,255,0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(0,123,255,0.6);
+  }
+}
+
+/* Hero Text */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: flex-start; /* desktop: left-aligned text */
+}
+
+.responsive-h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  white-space: nowrap; /* single line on large screens */
+  margin-bottom: 0.5rem;
+}
+
+.responsive-h1 .name {
+  color: #05eaff;
+}
+
+.title {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  color: #ccc;
+  margin-bottom: 0;
+}
+
+/* Hero Button */
+.hero-btn-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #00b3ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  width: auto;
+  max-width: 200px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #058bc4;
+  
+}
+
+/* Projects Section */
+.projects {
+  background: #171717;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 10rem;
+  
+}
+.projects h2{
+  color: #ffffff;
+  font-size: 2rem;
+
+}
+.project-tech{
+  color: #222222;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  
+}
+
+.project-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5%;
+}
+.project-text{
+  text-align: left;
+  padding: 0rem 1.5rem;
+
+}
+
+.card {
+  background: #5a5a5a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(25, 25, 25, 0.7);
+}
+
+.card h3 {
+  margin-bottom: 0.8rem;
+  color: #171717;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #e5e5e5;
+}
+/* Skills Section */
+.skills {
+  background: #1f1f1f; /* dark background */
+  text-align: center;
+  padding: 4rem 10%;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* Grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 2rem;
+}
+
+/* Square skill box */
+.skill-item {
+  background: #292929;
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1;            /* makes the box square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0,123,255,0.7);
+}
+
+/* Logo inside box */
+.skill-item img {
+  max-width: 60%;    /* logo size inside the square */
+  max-height: 60%;
+  object-fit: contain; /* keep aspect ratio, no distortion */
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 1rem;
+  }
+
+  .skill-item img {
+    max-width: 50%;
+    max-height: 50%;
+  }
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column; /* stack image above text */
+    justify-content: center;
+    align-items: center;    /* center everything */
+    text-align: center;
+  }
+  .hero-text {
+    align-items: center;    /* center text horizontally */
+    text-align: center;
+  }
+  .responsive-h1 {
+    white-space: normal;    /* allow wrapping */
+  }
+  .avatar-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+  .project-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+
+.contact {
+  background: #171717;
+  text-align: center;
+  flex: 0 0 auto;
+        /* neat vertical spacing */
+}
+
+.contact h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 2rem; /* space between heading and icons */
+}
+
+.contact-icons {
+  display: flex;
+  
+  gap: 1.5rem;           /* space between icons */
+  margin-bottom: 1rem;   /* space above copyright text */
+}
+
+.contact-icons img {
+  width: 25px;           /* small logos */
+  height: 25px;          /* force square */
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* make white on dark bg if needed */
+  transition: transform 0.2s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.1); /* small hover effect */
+}
+
+.copyright-text {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0;            /* no extra space */
+}
